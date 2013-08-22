@@ -388,6 +388,23 @@
 #define __NR_pipe2			(__NR_SYSCALL_BASE+359)
 #define __NR_inotify_init1		(__NR_SYSCALL_BASE+360)
 
+//==== SEAL
+
+#define __NR_seal			(__NR_SYSCALL_BASE+361)
+#define __NR_is_sealed                  (__NR_SYSCALL_BASE+362)
+#define __NR_sld_create_key             (__NR_SYSCALL_BASE+363)
+#define __NR_sld_open                   (__NR_SYSCALL_BASE+364)
+#define __NR_sld_ssl_connect            (__NR_SYSCALL_BASE+365)
+#define __NR_sld_ssl_read               (__NR_SYSCALL_BASE+366)
+#define __NR_sld_ssl_write              (__NR_SYSCALL_BASE+367)
+#define __NR_sld_ssl_disconnect         (__NR_SYSCALL_BASE+368)
+#define __NR_sld_post                   (__NR_SYSCALL_BASE+369)
+#define __NR_sld_put                    (__NR_SYSCALL_BASE+370)
+#define __NR_sld_get                    (__NR_SYSCALL_BASE+371)
+#define __NR_sld_delete                 (__NR_SYSCALL_BASE+372)
+
+//====
+
 /*
  * The following SWIs are ARM private.
  */

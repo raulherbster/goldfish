@@ -370,6 +370,18 @@
 		CALL(sys_dup3)
 		CALL(sys_pipe2)
 /* 360 */	CALL(sys_inotify_init1)
+		CALL(sys_seal)
+		CALL(sys_is_sealed)
+		CALL(sys_sld_create_key)
+		CALL(sys_sld_open)
+/* 365 */	CALL(sys_sld_ssl_connect)
+                CALL(sys_sld_ssl_read)
+                CALL(sys_sld_ssl_write)
+                CALL(sys_sld_ssl_disconnect)
+                CALL(sys_sld_post)
+/* 370 */       CALL(sys_sld_put)
+                CALL(sys_sld_get)
+/* 372 */       CALL(sys_sld_delete)		
 #ifndef syscalls_counted
 .equ syscalls_padding, ((NR_syscalls + 3) & ~3) - NR_syscalls
 #define syscalls_counted
