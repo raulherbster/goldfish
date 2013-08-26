@@ -1,15 +1,19 @@
 == Compiling - Quick start ==
 
 1. Set the path to include the pre-build toolchain
-   export PATH=<android_src>/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin/:$PATH
+   # export PATH=<android_src>/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin/:$PATH
+3. Set the Kernel config file
+   # make ARCH=arm goldfish_armv7_defconfig
 2. Run make
-   CROSS_COMPILE=<android_src>/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin/arm-eabi- ARCH=arm make
+   # CROSS_COMPILE=<android_src>/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin/arm-eabi- ARCH=arm make
 2. Change var ANDROID_PRODUCT_OUT
-   export ANDROID_PRODUCT_OUT=<android_src>/out/target/product/generic/
+   # export ANDROID_PRODUCT_OUT=<android_src>/out/target/product/generic/
 3. Run the emulator
-   <android_src>/out/host/linux-x86/bin/emulator-arm -system <android_src>/out/target/product/generic/system.img -kernel <android_kernel>/goldfish/arch/arm/boot/zImage -data <android_src>/out/target/product/generic/userdata.img -ramdisk <android_src>/out/target/product/generic/ramdisk.img -skindir <android_src>/sdk/emulator/skins/ -skin HVGA -verbose -show-kernel
+   # <android_src>/out/host/linux-x86/bin/emulator-arm -system <android_src>/out/target/product/generic/system.img -kernel <android_kernel>/goldfish/arch/arm/boot/zImage -data <android_src>/out/target/product/generic/userdata.img -ramdisk <android_src>/out/target/product/generic/ramdisk.img -skindir <android_src>/sdk/emulator/skins/ -skin HVGA -verbose -show-kernel
 
 == Issues ==
 
+* The option CONFIG_MODULES is NOT enabled by default. The default armv7 config file is changed so that
+it contains the proper change.
 * Android emulator does not work with Kernels > 2.6.X So, make sure to use the proper Kernel. For devices,
 any support Kernel will work.
